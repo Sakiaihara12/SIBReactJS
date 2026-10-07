@@ -1,0 +1,49 @@
+.main-navbar {
+  background: rgb(255 255 255 / 85%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 0.25s, border-color 0.25s, padding 0.25s;
+}
+
+.main-navbar.is-scrolled {
+  border-bottom-color: #e5e7eb;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 8%);
+}
+
+.main-navbar .nav-item-link {
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* garis bawah animasi: muncul saat hover dan tetap ada pada halaman aktif */
+.main-navbar .nav-item-link::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.15rem;
+  height: 2px;
+  background: #4f46e5;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.main-navbar .nav-item-link:hover,
+.main-navbar .nav-item-link.active {
+  color: #4f46e5;
+}
+
+.main-navbar .nav-item-link:hover::after,
+.main-navbar .nav-item-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 991.98px) {
+  .main-navbar .nav-item-link::after { display: none; }
+  .main-navbar .nav-item-link.active { background: #eef2ff; border-radius: 0.5rem; }
+}
