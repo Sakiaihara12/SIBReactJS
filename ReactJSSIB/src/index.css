@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background: #f8f9fc;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-right: 0.35rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 0.5rem;
+}
+
+.navbar .nav-link.active {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.hero {
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+}
+
+.team-avatar {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+}
+
+.team-card {
+  transition: transform 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+}
+
+:root {
+  --bs-primary: #4f46e5;
+  --bs-primary-rgb: 79, 70, 229;
+  --bs-link-color: #4f46e5;
+}
+
+.btn-primary {
+  --bs-btn-bg: #4f46e5;
+  --bs-btn-border-color: #4f46e5;
+  --bs-btn-hover-bg: #4338ca;
+  --bs-btn-hover-border-color: #4338ca;
+  --bs-btn-active-bg: #3730a3;
+  --bs-btn-active-border-color: #3730a3;
+  --bs-btn-disabled-bg: #4f46e5;
+  --bs-btn-disabled-border-color: #4f46e5;
+}
