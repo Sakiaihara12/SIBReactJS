@@ -1,0 +1,26 @@
+.book-list { max-width: 1160px; }
+
+.book-card {
+  overflow: hidden;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 40%);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 55%), 0 0 0 1px rgb(242 184 46 / 35%);
+}
+
+.book-card .card-img-top {
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+
+.book-card .card-title { color: var(--text); }
+.book-card .card-text { color: var(--muted); }

@@ -13,7 +13,7 @@ function TeamDetail() {
   return (
     <Container className="py-5" style={{ maxWidth: 720 }}>
       <Link to="/team" className="text-decoration-none">← Kembali ke Team</Link>
-      <div className="bg-white border rounded-4 shadow-sm p-4 p-md-5 mt-3 text-center">
+      <div className="surface-card rounded-4 p-4 p-md-5 mt-3 text-center">
         <div className="team-avatar mx-auto mb-3" style={{ background: `linear-gradient(135deg, ${member.color[0]}, ${member.color[1]})` }}>
           {initials(member.name)}
         </div>

@@ -1,37 +1,201 @@
+/* ===== Tema Yozora Shelf: hitam, emas, merah, dengan sedikit biru ===== */
+:root,
+[data-bs-theme='dark'] {
+  --ink: #0a0a0f;
+  --surface: #14141c;
+  --surface-2: #1c1c27;
+  --line: #2b2b3a;
+  --gold: #f2b82e;
+  --gold-soft: #ffd86b;
+  --gold-deep: #b8860b;
+  --crimson: #d71f3b;
+  --crimson-deep: #8f1226;
+  --azure: #4ea1ff;
+  --text: #f4efe3;
+  --muted: #a5a2b3;
+
+  --bs-body-bg: var(--ink);
+  --bs-body-color: var(--text);
+  --bs-secondary-color: var(--muted);
+  --bs-secondary-rgb: 165, 162, 179;
+  --bs-border-color: var(--line);
+  --bs-primary: var(--gold);
+  --bs-primary-rgb: 242, 184, 46;
+  --bs-link-color: var(--gold);
+  --bs-link-hover-color: var(--gold-soft);
+  --bs-link-color-rgb: 242, 184, 46;
+  --bs-link-hover-color-rgb: 255, 216, 107;
+}
+
 body {
   margin: 0;
-  background: #f8f9fc;
+  background:
+    radial-gradient(900px 400px at 100% -10%, rgb(215 31 59 / 12%), transparent 60%),
+    radial-gradient(700px 360px at -10% 0%, rgb(242 184 46 / 8%), transparent 60%),
+    var(--ink);
+  color: var(--text);
 }
 
-#root {
-  min-height: 100vh;
+#root { min-height: 100vh; }
+
+::selection { background: var(--gold); color: #000; }
+
+.text-secondary { color: var(--muted) !important; }
+.text-primary { color: var(--gold) !important; }
+.section-title { font-weight: 800; letter-spacing: 0.01em; }
+
+/* permukaan kartu */
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 35%);
 }
 
+/* tombol utama emas, teks gelap */
+.btn-primary {
+  --bs-btn-color: #14110a;
+  --bs-btn-bg: var(--gold);
+  --bs-btn-border-color: var(--gold);
+  --bs-btn-hover-color: #14110a;
+  --bs-btn-hover-bg: var(--gold-soft);
+  --bs-btn-hover-border-color: var(--gold-soft);
+  --bs-btn-active-color: #14110a;
+  --bs-btn-active-bg: var(--gold-deep);
+  --bs-btn-active-border-color: var(--gold-deep);
+  --bs-btn-disabled-bg: var(--gold);
+  --bs-btn-disabled-border-color: var(--gold);
+  font-weight: 600;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--gold);
+  --bs-btn-border-color: var(--gold);
+  --bs-btn-hover-color: #14110a;
+  --bs-btn-hover-bg: var(--gold);
+  --bs-btn-hover-border-color: var(--gold);
+  --bs-btn-active-color: #14110a;
+  --bs-btn-active-bg: var(--gold-soft);
+  --bs-btn-active-border-color: var(--gold-soft);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--text);
+  --bs-btn-border-color: var(--line);
+  --bs-btn-hover-bg: var(--surface-2);
+  --bs-btn-hover-color: var(--gold);
+  --bs-btn-hover-border-color: var(--gold);
+}
+
+.btn-crimson {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--crimson);
+  --bs-btn-border-color: var(--crimson);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ef2d4c;
+  --bs-btn-hover-border-color: #ef2d4c;
+  font-weight: 600;
+}
+
+/* form */
+.form-control,
+.form-select {
+  background-color: var(--surface-2);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--surface-2);
+  color: var(--text);
+  border-color: var(--azure);
+  box-shadow: 0 0 0 0.2rem rgb(78 161 255 / 22%);
+}
+
+.form-control::placeholder { color: #6f6d80; }
+
+.modal-content {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.modal-header,
+.modal-footer { border-color: var(--line); }
+
+/* brand */
 .brand-mark {
   display: inline-grid;
   place-items: center;
   width: 1.9rem;
   height: 1.9rem;
   margin-right: 0.35rem;
-  color: #fff;
-  font-weight: 700;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #14110a;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
   border-radius: 0.5rem;
+  box-shadow: 0 0 0 2px rgb(215 31 59 / 55%);
 }
 
-.navbar .nav-link.active {
-  color: #4f46e5;
-  font-weight: 600;
-}
-
-.section-title {
-  font-weight: 700;
-}
-
+/* hero */
 .hero {
-  background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+  position: relative;
+  background:
+    linear-gradient(135deg, rgb(215 31 59 / 14%) 0%, transparent 45%),
+    linear-gradient(315deg, rgb(78 161 255 / 10%) 0%, transparent 40%),
+    var(--surface);
+  border-bottom: 1px solid var(--line);
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold), var(--azure));
+}
+
+.badge-jp {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  color: var(--gold-soft);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgb(242 184 46 / 10%);
+  border: 1px solid rgb(242 184 46 / 45%);
+  border-radius: 999px;
+}
+
+.hero .accent {
+  background: linear-gradient(90deg, var(--gold-soft), var(--gold) 50%, #ff5a6e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* kotak ajakan */
+.cta-box {
+  background:
+    radial-gradient(500px 200px at 90% 0%, rgb(242 184 46 / 22%), transparent 60%),
+    linear-gradient(135deg, var(--crimson-deep), #1a0a10 70%);
+  border: 1px solid rgb(215 31 59 / 45%);
+}
+
+/* ikon bulat di kartu info */
+.topic-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  background: rgb(242 184 46 / 12%);
+  border: 1px solid rgb(242 184 46 / 30%);
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* team */
 .team-avatar {
   display: grid;
   place-items: center;
@@ -41,30 +205,20 @@ body {
   font-size: 1.9rem;
   font-weight: 700;
   border-radius: 50%;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 4px rgb(242 184 46 / 15%), 0 8px 20px rgb(0 0 0 / 45%);
 }
 
 .team-card {
-  transition: transform 0.2s;
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .team-card:hover {
   transform: translateY(-4px);
+  border-color: var(--gold) !important;
 }
 
-:root {
-  --bs-primary: #4f46e5;
-  --bs-primary-rgb: 79, 70, 229;
-  --bs-link-color: #4f46e5;
-}
-
-.btn-primary {
-  --bs-btn-bg: #4f46e5;
-  --bs-btn-border-color: #4f46e5;
-  --bs-btn-hover-bg: #4338ca;
-  --bs-btn-hover-border-color: #4338ca;
-  --bs-btn-active-bg: #3730a3;
-  --bs-btn-active-border-color: #3730a3;
-  --bs-btn-disabled-bg: #4f46e5;
-  --bs-btn-disabled-border-color: #4f46e5;
-}
+.badge.bg-primary { color: #14110a; }
+.alert-success { --bs-alert-bg: #11261b; --bs-alert-color: #8fe0b0; --bs-alert-border-color: #1f4a33; }

@@ -11,7 +11,7 @@ function Team() {
       <div className="text-center mb-5">
         <h1 className="section-title display-5">Tim Kami</h1>
         <p className="lead text-secondary mx-auto" style={{ maxWidth: 600 }}>
-          Orang-orang di balik Worthbook: berbeda peran, satu tujuan, yaitu membuat belajar React jadi menyenangkan.
+          Orang-orang di balik Yozora Shelf: berbeda peran, satu tujuan, yaitu membuat membeli buku jadi mudah dan menyenangkan.
         </p>
       </div>
       <Row xs={1} sm={2} lg={4} className="g-4">

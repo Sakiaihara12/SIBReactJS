@@ -8,7 +8,7 @@ import Alert from 'react-bootstrap/Alert'
 
 const info = [
   { icon: '📍', title: 'Alamat', text: 'Jl. Contoh No. 123, Jakarta, Indonesia' },
-  { icon: '✉️', title: 'Email', text: 'halo@worthbook.id' },
+  { icon: '✉️', title: 'Email', text: 'halo@yozorashelf.id' },
   { icon: '📞', title: 'Telepon', text: '+62 812-3456-7890' },
   { icon: '🕘', title: 'Jam Layanan', text: 'Senin – Jumat, 09.00 – 17.00 WIB' },
 ]
@@ -40,7 +40,7 @@ function Contact() {
         <Col lg={5}>
           <div className="d-grid gap-3">
             {info.map((i) => (
-              <div key={i.title} className="bg-white border rounded-4 p-3 d-flex gap-3 align-items-center shadow-sm">
+              <div key={i.title} className="surface-card rounded-4 p-3 d-flex gap-3 align-items-center">
                 <div className="topic-icon mb-0" aria-hidden="true">{i.icon}</div>
                 <div>
                   <div className="fw-semibold">{i.title}</div>
@@ -51,7 +51,7 @@ function Contact() {
           </div>
         </Col>
         <Col lg={7}>
-          <div className="bg-white border rounded-4 p-4 p-md-5 shadow-sm">
+          <div className="surface-card rounded-4 p-4 p-md-5">
             {sent && (
               <Alert variant="success" dismissible onClose={() => setSent(false)}>
                 Terima kasih! Pesanmu sudah terkirim.
@@ -78,7 +78,7 @@ function Contact() {
                     <Form.Label>Subjek</Form.Label>
                     <Form.Select required defaultValue="">
                       <option value="" disabled>Pilih topik…</option>
-                      <option>Pertanyaan umum</option>
+                      <option>Pertanyaan pesanan</option>
                       <option>Kolaborasi</option>
                       <option>Saran & masukan</option>
                     </Form.Select>

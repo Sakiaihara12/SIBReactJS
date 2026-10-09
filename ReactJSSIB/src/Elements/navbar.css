@@ -1,49 +1,56 @@
 .main-navbar {
-  background: rgb(255 255 255 / 85%);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid transparent;
-  transition: box-shadow 0.25s, border-color 0.25s, padding 0.25s;
+  background: rgb(10 10 15 / 85%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.25s, background 0.25s;
 }
 
+.main-navbar .navbar-brand { color: var(--text); }
+.main-navbar .navbar-brand:hover { color: var(--gold-soft); }
+
 .main-navbar.is-scrolled {
-  border-bottom-color: #e5e7eb;
-  box-shadow: 0 4px 16px rgb(15 23 42 / 8%);
+  background: rgb(10 10 15 / 95%);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 55%);
 }
+
+.main-navbar .navbar-toggler { border-color: var(--line); }
+.main-navbar .navbar-toggler-icon { filter: invert(1); }
 
 .main-navbar .nav-item-link {
   position: relative;
   padding: 0.5rem 0.9rem;
-  color: #4b5563;
+  color: var(--muted);
   font-weight: 500;
+  letter-spacing: 0.02em;
   transition: color 0.2s;
 }
 
-/* garis bawah animasi: muncul saat hover dan tetap ada pada halaman aktif */
+/* garis bawah emas ke merah: muncul saat hover dan tetap pada halaman aktif */
 .main-navbar .nav-item-link::after {
   content: '';
   position: absolute;
   left: 0.9rem;
   right: 0.9rem;
-  bottom: 0.15rem;
+  bottom: 0.1rem;
   height: 2px;
-  background: #4f46e5;
+  background: linear-gradient(90deg, var(--gold), var(--crimson));
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
 }
 
-.main-navbar .nav-item-link:hover,
-.main-navbar .nav-item-link.active {
-  color: #4f46e5;
-}
+.main-navbar .nav-item-link:hover { color: var(--gold-soft); }
+.main-navbar .nav-item-link.active { color: var(--gold); font-weight: 600; }
 
 .main-navbar .nav-item-link:hover::after,
-.main-navbar .nav-item-link.active::after {
-  transform: scaleX(1);
-}
+.main-navbar .nav-item-link.active::after { transform: scaleX(1); }
 
 @media (max-width: 991.98px) {
   .main-navbar .nav-item-link::after { display: none; }
-  .main-navbar .nav-item-link.active { background: #eef2ff; border-radius: 0.5rem; }
+  .main-navbar .nav-item-link.active {
+    background: rgb(242 184 46 / 10%);
+    border-left: 3px solid var(--crimson);
+    border-radius: 0.4rem;
+  }
 }

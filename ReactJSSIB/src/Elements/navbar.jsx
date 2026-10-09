@@ -1,31 +1,35 @@
-import { useEffect, useState } from 'react'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import { NavLink, Link } from 'react-router-dom'
-import './navbar.css'
+import { useEffect, useState } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { NavLink, Link } from "react-router-dom";
+import "./navbar.css";
 
 const links = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/team', label: 'Team' },
-  { to: '/contact', label: 'Contact' },
-]
+  { to: "/", label: "Home", end: true },
+  { to: "/book", label: "Book" },
+  { to: "/team", label: "Team" },
+  { to: "/contact", label: "Contact" },
+];
 
 function NavbarComponent() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <Navbar collapseOnSelect expand="lg" sticky="top" className={`main-navbar ${scrolled ? 'is-scrolled' : ''}`}>
+    <Navbar collapseOnSelect expand="lg" sticky="top" className={`main-navbar ${scrolled ? "is-scrolled" : ""}`}>
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold">
-          <span className="brand-mark">W</span> Worthbook
+          <span className="brand-mark">
+            <i className="bi bi-book-half"></i>
+          </span>{" "}
+          Yozora Shelf
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
@@ -37,12 +41,14 @@ function NavbarComponent() {
             ))}
           </Nav>
           <Nav>
-            <Link to="/contact" className="btn btn-primary px-4 rounded-pill">Hubungi Kami</Link>
+            <Link to="/contact" className="btn btn-primary px-4 rounded-pill">
+              Hubungi Kami
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
 
-export default NavbarComponent
+export default NavbarComponent;
